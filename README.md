@@ -42,8 +42,6 @@ import systems.beep.crossfire.frame.CRSFFrame;
 import systems.beep.crossfire.frame.GPSFrame;
 import systems.beep.processor.FrameProcessor;
 
-import java.util.function.Consumer;
-
 public class CRSFExample {
     public static void main(String[] args) {
         // Create a FrameProcessor to handle incoming data
