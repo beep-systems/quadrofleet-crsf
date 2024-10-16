@@ -10,6 +10,7 @@ import systems.beep.crossfire.frame.GPSFrame;
 import systems.beep.crossfire.frame.HexFrame;
 import systems.beep.crossfire.frame.LinkStatisticsFrame;
 import systems.beep.crossfire.frame.OpenTxSyncFrame;
+import systems.beep.crossfire.frame.ParameterSettingsEntryFrame;
 import systems.beep.crossfire.frame.VariometerFrame;
 import systems.beep.crossfire.frame.sub.FrameType;
 import systems.beep.exception.IncorrectFrameTypeException;
@@ -59,6 +60,7 @@ public class FrameFactory {
             case RC_CHANNELS_PACKED -> new ChannelsFrame(data);
             case VARIO -> new VariometerFrame(data);
             case GPS -> new GPSFrame(data);
+            case PARAMETER_SETTINGS_ENTRY -> new ParameterSettingsEntryFrame(data);
             default -> new HexFrame(data);
         };
     }
