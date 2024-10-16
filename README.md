@@ -37,4 +37,3 @@ This library is licensed under the GPL-3.0 License. See the [LICENSE](https://gi
 ## Acknowledgements
 
 Inspired by existing CRSF implementations and tailored for the Java ecosystem.
-```
