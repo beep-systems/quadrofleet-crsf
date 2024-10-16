@@ -121,3 +121,13 @@ This library is licensed under the GPL-3.0 License. See the [LICENSE](https://gi
 
 This project was inspired by various CRSF protocol implementations and adapted specifically for the Java ecosystem.
 Thanks to the open-source community for contributions and shared knowledge.
+
+## Useful Links
+
+Here are some useful resources and references that can provide further insight into the CRSF protocol and related implementations:
+
+- [CRSF Rust Implementation](https://github.com/tact1m4n3/crsf-rs): A CRSF protocol implementation in Rust, which can serve as a reference for understanding protocol behavior and frame structures in a different programming language.
+
+- [ExpressLRS CRSF Protocol Source](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/lib/CrsfProtocol/crsf_protocol.h): The CRSF protocol definition used in the ExpressLRS project. This header file defines the protocol's key elements and can be a helpful resource for developers.
+
+- [Betaflight CRSF Protocol Source](https://github.com/betaflight/betaflight/blob/master/src/main/rx/crsf.c): CRSF protocol handling within the Betaflight project, a popular open-source flight control software for UAVs. This source code demonstrates how CRSF is integrated into real-world UAV control systems.
