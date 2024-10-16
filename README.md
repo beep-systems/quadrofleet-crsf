@@ -126,6 +126,8 @@ Thanks to the open-source community for contributions and shared knowledge.
 
 Here are some useful resources and references that can provide further insight into the CRSF protocol and related implementations:
 
+- [CRSF Protocol Wiki](https://github.com/crsf-wg/crsf/wiki): The official CRSF protocol wiki, offering in-depth documentation on the protocol, frame types, and how it operates.
+
 - [CRSF Rust Implementation](https://github.com/tact1m4n3/crsf-rs): A CRSF protocol implementation in Rust, which can serve as a reference for understanding protocol behavior and frame structures in a different programming language.
 
 - [ExpressLRS CRSF Protocol Source](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/lib/CrsfProtocol/crsf_protocol.h): The CRSF protocol definition used in the ExpressLRS project. This header file defines the protocol's key elements and can be a helpful resource for developers.
