@@ -64,15 +64,6 @@ public abstract class CRSFFrame {
     }
 
     /**
-     * Determines if the frame can be ignored.
-     *
-     * @return true if the frame is ignorable, false otherwise.
-     */
-    public boolean isIgnorable() {
-        return true;
-    }
-
-    /**
      * Retrieves the raw data of the frame.
      *
      * @return the raw byte array of the frame.

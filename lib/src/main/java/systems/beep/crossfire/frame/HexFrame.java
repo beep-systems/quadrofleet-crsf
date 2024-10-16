@@ -36,16 +36,6 @@ public class HexFrame extends CRSFFrame {
     }
 
     /**
-     * Indicates that the HexFrame is not ignorable.
-     *
-     * @return false, indicating that this frame should not be ignored.
-     */
-    @Override
-    public boolean isIgnorable() {
-        return false;
-    }
-
-    /**
      * Checks the CRC (Cyclic Redundancy Check) of the HexFrame.
      *
      * @return true if the CRC is valid; otherwise, false.

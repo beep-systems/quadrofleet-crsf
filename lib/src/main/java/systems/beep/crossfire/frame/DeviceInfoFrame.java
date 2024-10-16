@@ -102,14 +102,4 @@ public class DeviceInfoFrame extends CRSFExtendedFrame {
         return getData()[offset + 13];
     }
 
-    /**
-     * Determines if the frame can be ignored.
-     *
-     * @return false, indicating that this frame contains important information.
-     */
-    @Override
-    public boolean isIgnorable() {
-        return false;
-    }
-
 }

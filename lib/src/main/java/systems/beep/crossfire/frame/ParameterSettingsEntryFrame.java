@@ -110,15 +110,4 @@ public class ParameterSettingsEntryFrame extends CRSFExtendedFrame {
                         getBuffer().length);
     }
 
-    /**
-     * Indicates whether this frame is ignorable.
-     * Parameter settings entry frames are considered not ignorable.
-     *
-     * @return {@code false}, indicating that this frame should not be ignored.
-     */
-    @Override
-    public boolean isIgnorable() {
-        return false;
-    }
-
 }

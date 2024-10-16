@@ -41,14 +41,4 @@ public class SubsetChannelsFrame extends CRSFFrame {
         return 0; // TODO: Implement retrieval of the actual origin device address
     }
 
-    /**
-     * Indicates that the SubsetChannelsFrame is not ignorable.
-     *
-     * @return false, indicating that this frame should not be ignored.
-     */
-    @Override
-    public boolean isIgnorable() {
-        return false;
-    }
-
 }
