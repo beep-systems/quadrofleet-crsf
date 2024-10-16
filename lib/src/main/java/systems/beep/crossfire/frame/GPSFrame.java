@@ -92,8 +92,8 @@ public class GPSFrame extends CRSFFrame {
      *
      * @return the GPS altitude in meters, adjusted by subtracting 1000 meters, with values stored in big-endian format.
      */
-    public double getAltitude() {
-        return (double) TelemetryHelper.binaryToShort(rawData, 15, 17) - 1000;
+    public int getAltitude() {
+        return (int) TelemetryHelper.binaryToShort(rawData, 15, 17) - 1000;
     }
 
     /**
