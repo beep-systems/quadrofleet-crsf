@@ -8,7 +8,7 @@ import systems.beep.helper.TelemetryHelper;
  * <p>
  * The {@code ChannelBuilder} class facilitates the creation and configuration of
  * channels for telemetry purposes. It allows users to set values for different
- * channels, including roll, pitch, throttle, yaw, and auxiliary channels (AUX1 to AUX16).
+ * channels, including roll, pitch, throttle, yaw, and armed channels (CHANNEL 1 to CHANNEL 16).
  * Default values for channels are set based on telemetry failsafe values.
  * </p>
  *
@@ -19,41 +19,41 @@ import systems.beep.helper.TelemetryHelper;
  */
 public class ChannelBuilder {
 
-    // Roll - AUX1
-    private int aux1 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    // Roll - CHANNEL 1
+    private int channel1 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    // Pitch - AUX2
-    private int aux2 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    // Pitch - CHANNEL 2
+    private int channel2 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    // Throttle - AUX3
-    private int aux3 = TelemetryHelper.FAILSAFE_CRSF_VALUE;
+    // Throttle - CHANNEL 3
+    private int channel3 = TelemetryHelper.FAILSAFE_CRSF_VALUE;
 
-    // Yaw - AUX4
-    private int aux4 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    // Yaw - CHANNEL 4
+    private int channel4 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux5 = TelemetryHelper.FAILSAFE_CRSF_VALUE;
+    private int channel5 = TelemetryHelper.FAILSAFE_CRSF_VALUE;
 
-    private int aux6 = TelemetryHelper.FAILSAFE_CRSF_VALUE;
+    private int channel6 = TelemetryHelper.FAILSAFE_CRSF_VALUE;
 
-    private int aux7 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel7 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux8 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel8 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux9 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel9 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux10 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel10 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux11 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel11 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux12 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel12 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux13 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel13 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux14 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel14 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux15 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel15 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
-    private int aux16 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
+    private int channel16 = TelemetryHelper.FAILSAFE_MICROSECONDS_VALUE;
 
     /**
      * Private constructor to prevent direct instantiation.
@@ -83,72 +83,72 @@ public class ChannelBuilder {
                 getPitch(),
                 getThrottle(),
                 getYaw(),
-                getAux5(),
-                getAux6(),
-                getAux7(),
-                getAux8(),
-                getAux9(),
-                getAux10(),
-                getAux11(),
-                getAux12(),
-                getAux13(),
-                getAux14(),
-                getAux15(),
-                getAux16()
+                getArmed(),
+                getChannel6(),
+                getChannel7(),
+                getChannel8(),
+                getChannel9(),
+                getChannel10(),
+                getChannel11(),
+                getChannel12(),
+                getChannel13(),
+                getChannel14(),
+                getChannel15(),
+                getChannel16()
         };
     }
 
-    // AUX1 - Roll
+    // CHANNEL 1 - Roll
 
     /**
-     * Retrieves the value for AUX1 channel (Roll).
+     * Retrieves the value for CHANNEL 1 channel (Roll).
      *
-     * @return the AUX1 (Roll) value.
+     * @return the CHANNEL 1 (Roll) value.
      */
-    public int getAux1() {
-        return aux1;
+    public int getChannel1() {
+        return channel1;
     }
 
     /**
-     * Sets the value for AUX1 (Roll) as an integer.
+     * Sets the value for CHANNEL 1 (Roll) as an integer.
      *
-     * @param aux1 the AUX1 value to set.
+     * @param channel1 the CHANNEL 1 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux1(int aux1) {
-        this.aux1 = aux1;
+    public ChannelBuilder setChannel1(int channel1) {
+        this.channel1 = channel1;
         return this;
     }
 
     /**
-     * Sets the value for AUX1 (Roll) as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 1 (Roll) as a double and parses it to the correct format.
      *
-     * @param aux1 the AUX1 value to set as a double.
+     * @param channel1 the CHANNEL 1 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux1(double aux1) {
-        this.aux1 = FormatHelper.parseAxisValue(aux1);
+    public ChannelBuilder setChannel1(double channel1) {
+        this.channel1 = FormatHelper.parseAxisValue(channel1);
         return this;
     }
 
     /**
-     * Sets the value for AUX1 (Roll) based on a boolean (activated or not).
+     * Sets the value for CHANNEL 1 (Roll) based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux1(boolean activated) {
-        this.aux1 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel1(boolean activated) {
+        this.channel1 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
     /**
-     * Retrieves the value for Roll (alias of AUX1).
+     * Retrieves the value for Roll (alias of CHANNEL 1).
      *
      * @return the Roll value.
      */
     public int getRoll() {
-        return aux1;
+        return channel1;
     }
 
     /**
@@ -158,18 +158,18 @@ public class ChannelBuilder {
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setRoll(int roll) {
-        this.aux1 = roll;
+        this.channel1 = roll;
         return this;
     }
 
     /**
      * Sets the value for Roll as a double and parses it to the correct format.
      *
-     * @param roll the Roll value to set as a double.
+     * @param roll the Roll value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setRoll(double roll) {
-        this.aux1 = FormatHelper.parseAxisValue(roll);
+        this.channel1 = FormatHelper.parseAxisValue(roll);
         return this;
     }
 
@@ -180,61 +180,61 @@ public class ChannelBuilder {
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setRoll(boolean activated) {
-        this.aux1 = FormatHelper.parseActivatedValue(activated);
+        this.channel1 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-    // AUX2
+    // CHANNEL 2 - Pitch
 
     /**
-     * Retrieves the value for AUX2 channel (Pitch).
+     * Retrieves the value for CHANNEL 2 channel (Pitch).
      *
-     * @return the AUX2 (Pitch) value.
+     * @return the CHANNEL 2 (Pitch) value.
      */
-    public int getAux2() {
-        return aux2;
+    public int getChannel2() {
+        return channel2;
     }
 
     /**
-     * Sets the value for AUX2 (Pitch) as an integer.
+     * Sets the value for CHANNEL 2 (Pitch) as an integer.
      *
-     * @param aux2 the AUX2 value to set.
+     * @param channel2 the CHANNEL 2 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux2(int aux2) {
-        this.aux2 = aux2;
+    public ChannelBuilder setChannel2(int channel2) {
+        this.channel2 = channel2;
         return this;
     }
 
     /**
-     * Sets the value for AUX2 (Pitch) as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 2 (Pitch) as a double and parses it to the correct format.
      *
-     * @param aux2 the AUX2 value to set as a double.
+     * @param channel2 the CHANNEL 2 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux2(double aux2) {
-        this.aux2 = FormatHelper.parseAxisValue(aux2);
+    public ChannelBuilder setChannel2(double channel2) {
+        this.channel2 = FormatHelper.parseAxisValue(channel2);
         return this;
     }
 
     /**
-     * Sets the value for AUX2 (Pitch) based on a boolean (activated or not).
+     * Sets the value for CHANNEL 2 (Pitch) based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux2(boolean activated) {
-        this.aux2 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel2(boolean activated) {
+        this.channel2 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
     /**
-     * Retrieves the value for Pitch (alias of AUX2).
+     * Retrieves the value for Pitch (alias of CHANNEL 2).
      *
      * @return the Pitch value.
      */
     public int getPitch() {
-        return aux2;
+        return channel2;
     }
 
     /**
@@ -244,18 +244,18 @@ public class ChannelBuilder {
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setPitch(int pitch) {
-        this.aux2 = pitch;
+        this.channel2 = pitch;
         return this;
     }
 
     /**
      * Sets the value for Pitch as a double and parses it to the correct format.
      *
-     * @param pitch the Pitch value to set as a double.
+     * @param pitch the Pitch value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setPitch(double pitch) {
-        this.aux2 = FormatHelper.parseAxisValue(pitch);
+        this.channel2 = FormatHelper.parseAxisValue(pitch);
         return this;
     }
 
@@ -266,61 +266,61 @@ public class ChannelBuilder {
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setPitch(boolean activated) {
-        this.aux2 = FormatHelper.parseActivatedValue(activated);
+        this.channel2 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-    // AUX3
+    // CHANNEL 3 - Throttle
 
     /**
-     * Retrieves the value for AUX3 channel (Throttle).
+     * Retrieves the value for CHANNEL 3 channel (Throttle).
      *
-     * @return the AUX3 (Throttle) value.
+     * @return the CHANNEL 3 (Throttle) value.
      */
-    public int getAux3() {
-        return aux3;
+    public int getChannel3() {
+        return channel3;
     }
 
     /**
-     * Sets the value for AUX3 (Throttle) as an integer.
+     * Sets the value for CHANNEL 3 (Throttle) as an integer.
      *
-     * @param aux3 the AUX3 value to set.
+     * @param channel3 the CHANNEL 3 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux3(int aux3) {
-        this.aux3 = aux3;
+    public ChannelBuilder setChannel3(int channel3) {
+        this.channel3 = channel3;
         return this;
     }
 
     /**
-     * Sets the value for AUX3 (Throttle) as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 3 (Throttle) as a double and parses it to the correct format.
      *
-     * @param aux3 the AUX3 value to set as a double.
+     * @param channel3 the CHANNEL 3 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux3(double aux3) {
-        this.aux3 = FormatHelper.parseAxisValue(aux3);
+    public ChannelBuilder setChannel3(double channel3) {
+        this.channel3 = FormatHelper.parseAxisValue(channel3);
         return this;
     }
 
     /**
-     * Sets the value for AUX3 (Throttle) based on a boolean (activated or not).
+     * Sets the value for CHANNEL 3 (Throttle) based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux3(boolean activated) {
-        this.aux3 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel3(boolean activated) {
+        this.channel3 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
     /**
-     * Retrieves the value for Throttle (alias of AUX3).
+     * Retrieves the value for Throttle (alias of CHANNEL 3).
      *
      * @return the Throttle value.
      */
     public int getThrottle() {
-        return aux3;
+        return channel3;
     }
 
     /**
@@ -330,18 +330,18 @@ public class ChannelBuilder {
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setThrottle(int throttle) {
-        this.aux3 = throttle;
+        this.channel3 = throttle;
         return this;
     }
 
     /**
      * Sets the value for Throttle as a double and parses it to the correct format.
      *
-     * @param throttle the Throttle value to set as a double.
+     * @param throttle the Throttle value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setThrottle(double throttle) {
-        this.aux3 = FormatHelper.parseAxisValue(throttle);
+        this.channel3 = FormatHelper.parseAxisValue(throttle);
         return this;
     }
 
@@ -352,62 +352,61 @@ public class ChannelBuilder {
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setThrottle(boolean activated) {
-        this.aux3 = FormatHelper.parseActivatedValue(activated);
+        this.channel3 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-
-    // AUX4
+    // CHANNEL 4 - Yaw
 
     /**
-     * Retrieves the value for AUX4 channel (Yaw).
+     * Retrieves the value for CHANNEL 4 channel (Yaw).
      *
-     * @return the AUX4 (Yaw) value.
+     * @return the CHANNEL 4 (Yaw) value.
      */
-    public int getAux4() {
-        return aux4;
+    public int getChannel4() {
+        return channel4;
     }
 
     /**
-     * Sets the value for AUX4 (Yaw) as an integer.
+     * Sets the value for CHANNEL 4 (Yaw) as an integer.
      *
-     * @param aux4 the AUX4 value to set.
+     * @param channel4 the CHANNEL 4 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux4(int aux4) {
-        this.aux4 = aux4;
+    public ChannelBuilder setChannel4(int channel4) {
+        this.channel4 = channel4;
         return this;
     }
 
     /**
-     * Sets the value for AUX4 (Yaw) as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 4 (Yaw) as a double and parses it to the correct format.
      *
-     * @param aux4 the AUX4 value to set as a double.
+     * @param channel4 the CHANNEL 4 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux4(double aux4) {
-        this.aux4 = FormatHelper.parseAxisValue(aux5); // Possible typo, should use aux4 here instead of aux5
+    public ChannelBuilder setChannel4(double channel4) {
+        this.channel4 = FormatHelper.parseAxisValue(channel5); // Possible typo, should use channel4 here instead of channel5
         return this;
     }
 
     /**
-     * Sets the value for AUX4 (Yaw) based on a boolean (activated or not).
+     * Sets the value for CHANNEL 4 (Yaw) based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux4(boolean activated) {
-        this.aux5 = FormatHelper.parseActivatedValue(activated); // Possible typo, should use aux4 here instead of aux5
+    public ChannelBuilder setChannel4(boolean activated) {
+        this.channel4 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
     /**
-     * Retrieves the value for Yaw (alias of AUX4).
+     * Retrieves the value for Yaw (alias of CHANNEL 4).
      *
      * @return the Yaw value.
      */
     public int getYaw() {
-        return aux4;
+        return channel4;
     }
 
     /**
@@ -417,18 +416,18 @@ public class ChannelBuilder {
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setYaw(int yaw) {
-        this.aux4 = yaw;
+        this.channel4 = yaw;
         return this;
     }
 
     /**
      * Sets the value for Yaw as a double and parses it to the correct format.
      *
-     * @param yaw the Yaw value to set as a double.
+     * @param yaw the Yaw value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setYaw(double yaw) {
-        this.aux4 = FormatHelper.parseAxisValue(yaw);
+        this.channel4 = FormatHelper.parseAxisValue(yaw);
         return this;
     }
 
@@ -439,540 +438,555 @@ public class ChannelBuilder {
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
     public ChannelBuilder setYaw(boolean activated) {
-        this.aux5 = FormatHelper.parseActivatedValue(activated); // Possible typo, should use aux4 here instead of aux5
+        this.channel4 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX5
+    // CHANNEL 5
 
     /**
-     * Retrieves the value for AUX5 channel.
+     * Retrieves the value for CHANNEL 5 channel.
      *
-     * @return the AUX5 value.
+     * @return the CHANNEL 5 value.
      */
-    public int getAux5() {
-        return aux5;
+    public int getChannel5() {
+        return channel5;
     }
 
     /**
-     * Sets the value for AUX5 as an integer.
+     * Sets the value for CHANNEL 5 as an integer.
      *
-     * @param aux5 the AUX5 value to set.
+     * @param channel5 the CHANNEL 5 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux5(int aux5) {
-        this.aux5 = aux5;
+    public ChannelBuilder setChannel5(int channel5) {
+        this.channel5 = channel5;
         return this;
     }
 
     /**
-     * Sets the value for AUX5 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 5 as a double and parses it to the correct format.
      *
-     * @param aux5 the AUX5 value to set as a double.
+     * @param channel5 the CHANNEL 5 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux5(double aux5) {
-        this.aux5 = FormatHelper.parseAxisValue(aux5);
+    public ChannelBuilder setChannel5(double channel5) {
+        this.channel5 = FormatHelper.parseAxisValue(channel5);
         return this;
     }
 
     /**
-     * Sets the value for AUX5 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 5 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux5(boolean activated) {
-        this.aux5 = FormatHelper.parseActivatedValue(activated);
-        return this;
-    }
-
-    // AUX6
-
-    /**
-     * Retrieves the value for AUX6 channel.
-     *
-     * @return the AUX6 value.
-     */
-    public int getAux6() {
-        return aux6;
-    }
-
-    /**
-     * Sets the value for AUX6 as an integer.
-     *
-     * @param aux6 the AUX6 value to set.
-     * @return the current {@code ChannelBuilder} instance for chaining.
-     */
-    public ChannelBuilder setAux6(int aux6) {
-        this.aux6 = aux6;
+    public ChannelBuilder setChannel5(boolean activated) {
+        this.channel5 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
     /**
-     * Sets the value for AUX6 as a double and parses it to the correct format.
-     *
-     * @param aux6 the AUX6 value to set as a double.
-     * @return the current {@code ChannelBuilder} instance for chaining.
-     */
-    public ChannelBuilder setAux6(double aux6) {
-        this.aux6 = FormatHelper.parseAxisValue(aux6);
-        return this;
-    }
-
-    /**
-     * Sets the value for AUX6 based on a boolean (activated or not).
+     * Sets the value for Armed based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux6(boolean activated) {
-        this.aux6 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setArmed(boolean activated) {
+        this.channel5 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX7
+    /**
+     * Retrieves the value for Armed (alias of CHANNEL 5).
+     *
+     * @return the Armed value.
+     */
+    public int getArmed() {
+        return channel5;
+    }
+
+    // CHANNEL 6
 
     /**
-     * Retrieves the value for AUX7 channel.
+     * Retrieves the value for CHANNEL 6 channel.
      *
-     * @return the AUX7 value.
+     * @return the CHANNEL 6 value.
      */
-    public int getAux7() {
-        return aux7;
+    public int getChannel6() {
+        return channel6;
     }
 
     /**
-     * Sets the value for AUX7 as an integer.
+     * Sets the value for CHANNEL 6 as an integer.
      *
-     * @param aux7 the AUX7 value to set.
+     * @param channel6 the CHANNEL 6 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux7(int aux7) {
-        this.aux7 = aux7;
+    public ChannelBuilder setChannel6(int channel6) {
+        this.channel6 = channel6;
         return this;
     }
 
     /**
-     * Sets the value for AUX7 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 6 as a double and parses it to the correct format.
      *
-     * @param aux7 the AUX7 value to set as a double.
+     * @param channel6 the CHANNEL 6 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux7(double aux7) {
-        this.aux7 = FormatHelper.parseAxisValue(aux7);
+    public ChannelBuilder setChannel6(double channel6) {
+        this.channel6 = FormatHelper.parseAxisValue(channel6);
         return this;
     }
 
     /**
-     * Sets the value for AUX7 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 6 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux7(boolean activated) {
-        this.aux7 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel6(boolean activated) {
+        this.channel6 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX8
+    // CHANNEL 7
 
     /**
-     * Retrieves the value for AUX8 channel.
+     * Retrieves the value for CHANNEL 7 channel.
      *
-     * @return the AUX8 value.
+     * @return the CHANNEL 7 value.
      */
-    public int getAux8() {
-        return aux8;
+    public int getChannel7() {
+        return channel7;
     }
 
     /**
-     * Sets the value for AUX8 as an integer.
+     * Sets the value for CHANNEL 7 as an integer.
      *
-     * @param aux8 the AUX8 value to set.
+     * @param channel7 the CHANNEL 7 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux8(int aux8) {
-        this.aux8 = aux8;
+    public ChannelBuilder setChannel7(int channel7) {
+        this.channel7 = channel7;
         return this;
     }
 
     /**
-     * Sets the value for AUX8 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 7 as a double and parses it to the correct format.
      *
-     * @param aux8 the AUX8 value to set as a double.
+     * @param channel7 the CHANNEL 7 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux8(double aux8) {
-        this.aux8 = FormatHelper.parseAxisValue(aux8);
+    public ChannelBuilder setChannel7(double channel7) {
+        this.channel7 = FormatHelper.parseAxisValue(channel7);
         return this;
     }
 
     /**
-     * Sets the value for AUX8 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 7 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux8(boolean activated) {
-        this.aux8 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel7(boolean activated) {
+        this.channel7 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-
-    // AUX9
-
-    // AUX9
+    // CHANNEL 8
 
     /**
-     * Retrieves the value for AUX9 channel.
+     * Retrieves the value for CHANNEL 8 channel.
      *
-     * @return the AUX9 value.
+     * @return the CHANNEL 8 value.
      */
-    public int getAux9() {
-        return aux9;
+    public int getChannel8() {
+        return channel8;
     }
 
     /**
-     * Sets the value for AUX9 as an integer.
+     * Sets the value for CHANNEL 8 as an integer.
      *
-     * @param aux9 the AUX9 value to set.
+     * @param channel8 the CHANNEL 8 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux9(int aux9) {
-        this.aux9 = aux9;
+    public ChannelBuilder setChannel8(int channel8) {
+        this.channel8 = channel8;
         return this;
     }
 
     /**
-     * Sets the value for AUX9 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 8 as a double and parses it to the correct format.
      *
-     * @param aux9 the AUX9 value to set as a double.
+     * @param channel8 the CHANNEL 8 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux9(double aux9) {
-        this.aux9 = FormatHelper.parseAxisValue(aux9);
+    public ChannelBuilder setChannel8(double channel8) {
+        this.channel8 = FormatHelper.parseAxisValue(channel8);
         return this;
     }
 
     /**
-     * Sets the value for AUX9 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 8 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux9(boolean activated) {
-        this.aux9 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel8(boolean activated) {
+        this.channel8 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX10
+    // CHANNEL 9
 
     /**
-     * Retrieves the value for AUX10 channel.
+     * Retrieves the value for CHANNEL 9 channel.
      *
-     * @return the AUX10 value.
+     * @return the CHANNEL 9 value.
      */
-    public int getAux10() {
-        return aux10;
+    public int getChannel9() {
+        return channel9;
     }
 
     /**
-     * Sets the value for AUX10 as an integer.
+     * Sets the value for CHANNEL 9 as an integer.
      *
-     * @param aux10 the AUX10 value to set.
+     * @param channel9 the CHANNEL 9 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux10(int aux10) {
-        this.aux10 = aux10;
+    public ChannelBuilder setChannel9(int channel9) {
+        this.channel9 = channel9;
         return this;
     }
 
     /**
-     * Sets the value for AUX10 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 9 as a double and parses it to the correct format.
      *
-     * @param aux10 the AUX10 value to set as a double.
+     * @param channel9 the CHANNEL 9 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux10(double aux10) {
-        this.aux10 = FormatHelper.parseAxisValue(aux10);
+    public ChannelBuilder setChannel9(double channel9) {
+        this.channel9 = FormatHelper.parseAxisValue(channel9);
         return this;
     }
 
     /**
-     * Sets the value for AUX10 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 9 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux10(boolean activated) {
-        this.aux10 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel9(boolean activated) {
+        this.channel9 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX11
+    // CHANNEL 10
 
     /**
-     * Retrieves the value for AUX11 channel.
+     * Retrieves the value for CHANNEL 10 channel.
      *
-     * @return the AUX11 value.
+     * @return the CHANNEL 10 value.
      */
-    public int getAux11() {
-        return aux11;
+    public int getChannel10() {
+        return channel10;
     }
 
     /**
-     * Sets the value for AUX11 as an integer.
+     * Sets the value for CHANNEL 10 as an integer.
      *
-     * @param aux11 the AUX11 value to set.
+     * @param channel10 the CHANNEL 10 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux11(int aux11) {
-        this.aux11 = aux11;
+    public ChannelBuilder setChannel10(int channel10) {
+        this.channel10 = channel10;
         return this;
     }
 
     /**
-     * Sets the value for AUX11 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 10 as a double and parses it to the correct format.
      *
-     * @param aux11 the AUX11 value to set as a double.
+     * @param channel10 the CHANNEL 10 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux11(double aux11) {
-        this.aux11 = FormatHelper.parseAxisValue(aux11);
+    public ChannelBuilder setChannel10(double channel10) {
+        this.channel10 = FormatHelper.parseAxisValue(channel10);
         return this;
     }
 
     /**
-     * Sets the value for AUX11 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 10 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux11(boolean activated) {
-        this.aux11 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel10(boolean activated) {
+        this.channel10 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX12
+    // CHANNEL 11
 
     /**
-     * Retrieves the value for AUX12 channel.
+     * Retrieves the value for CHANNEL 11 channel.
      *
-     * @return the AUX12 value.
+     * @return the CHANNEL 11 value.
      */
-    public int getAux12() {
-        return aux12;
+    public int getChannel11() {
+        return channel11;
     }
 
     /**
-     * Sets the value for AUX12 as an integer.
+     * Sets the value for CHANNEL 11 as an integer.
      *
-     * @param aux12 the AUX12 value to set.
+     * @param channel11 the CHANNEL 11 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux12(int aux12) {
-        this.aux12 = aux12;
+    public ChannelBuilder setChannel11(int channel11) {
+        this.channel11 = channel11;
         return this;
     }
 
     /**
-     * Sets the value for AUX12 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 11 as a double and parses it to the correct format.
      *
-     * @param aux12 the AUX12 value to set as a double.
+     * @param channel11 the CHANNEL 11 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux12(double aux12) {
-        this.aux12 = FormatHelper.parseAxisValue(aux12);
+    public ChannelBuilder setChannel11(double channel11) {
+        this.channel11 = FormatHelper.parseAxisValue(channel11);
         return this;
     }
 
     /**
-     * Sets the value for AUX12 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 11 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux12(boolean activated) {
-        this.aux12 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel11(boolean activated) {
+        this.channel11 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-    // AUX13
-
-    // AUX13
+    // CHANNEL 12
 
     /**
-     * Retrieves the value for AUX13 channel.
+     * Retrieves the value for CHANNEL 12 channel.
      *
-     * @return the AUX13 value.
+     * @return the CHANNEL 12 value.
      */
-    public int getAux13() {
-        return aux13;
+    public int getChannel12() {
+        return channel12;
     }
 
     /**
-     * Sets the value for AUX13 as an integer.
+     * Sets the value for CHANNEL 12 as an integer.
      *
-     * @param aux13 the AUX13 value to set.
+     * @param channel12 the CHANNEL 12 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux13(int aux13) {
-        this.aux13 = aux13;
+    public ChannelBuilder setChannel12(int channel12) {
+        this.channel12 = channel12;
         return this;
     }
 
     /**
-     * Sets the value for AUX13 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 12 as a double and parses it to the correct format.
      *
-     * @param aux13 the AUX13 value to set as a double.
+     * @param channel12 the CHANNEL 12 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux13(double aux13) {
-        this.aux13 = FormatHelper.parseAxisValue(aux13);
+    public ChannelBuilder setChannel12(double channel12) {
+        this.channel12 = FormatHelper.parseAxisValue(channel12);
         return this;
     }
 
     /**
-     * Sets the value for AUX13 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 12 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux13(boolean activated) {
-        this.aux13 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel12(boolean activated) {
+        this.channel12 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX14
+    // CHANNEL 13
 
     /**
-     * Retrieves the value for AUX14 channel.
+     * Retrieves the value for CHANNEL 13 channel.
      *
-     * @return the AUX14 value.
+     * @return the CHANNEL 13 value.
      */
-    public int getAux14() {
-        return aux14;
+    public int getChannel13() {
+        return channel13;
     }
 
     /**
-     * Sets the value for AUX14 as an integer.
+     * Sets the value for CHANNEL 13 as an integer.
      *
-     * @param aux14 the AUX14 value to set.
+     * @param channel13 the CHANNEL 13 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux14(int aux14) {
-        this.aux14 = aux14;
+    public ChannelBuilder setChannel13(int channel13) {
+        this.channel13 = channel13;
         return this;
     }
 
     /**
-     * Sets the value for AUX14 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 13 as a double and parses it to the correct format.
      *
-     * @param aux14 the AUX14 value to set as a double.
+     * @param channel13 the CHANNEL 13 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux14(double aux14) {
-        this.aux14 = FormatHelper.parseAxisValue(aux14);
+    public ChannelBuilder setChannel13(double channel13) {
+        this.channel13 = FormatHelper.parseAxisValue(channel13);
         return this;
     }
 
     /**
-     * Sets the value for AUX14 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 13 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux14(boolean activated) {
-        this.aux14 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel13(boolean activated) {
+        this.channel13 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX15
+    // CHANNEL 14
 
     /**
-     * Retrieves the value for AUX15 channel.
+     * Retrieves the value for CHANNEL 14 channel.
      *
-     * @return the AUX15 value.
+     * @return the CHANNEL 14 value.
      */
-    public int getAux15() {
-        return aux15;
+    public int getChannel14() {
+        return channel14;
     }
 
     /**
-     * Sets the value for AUX15 as an integer.
+     * Sets the value for CHANNEL 14 as an integer.
      *
-     * @param aux15 the AUX15 value to set.
+     * @param channel14 the CHANNEL 14 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux15(int aux15) {
-        this.aux15 = aux15;
+    public ChannelBuilder setChannel14(int channel14) {
+        this.channel14 = channel14;
         return this;
     }
 
     /**
-     * Sets the value for AUX15 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 14 as a double and parses it to the correct format.
      *
-     * @param aux15 the AUX15 value to set as a double.
+     * @param channel14 the CHANNEL 14 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux15(double aux15) {
-        this.aux15 = FormatHelper.parseAxisValue(aux15);
+    public ChannelBuilder setChannel14(double channel14) {
+        this.channel14 = FormatHelper.parseAxisValue(channel14);
         return this;
     }
 
     /**
-     * Sets the value for AUX15 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 14 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux15(boolean activated) {
-        this.aux15 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel14(boolean activated) {
+        this.channel14 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
-// AUX16
+    // CHANNEL 15
 
     /**
-     * Retrieves the value for AUX16 channel.
+     * Retrieves the value for CHANNEL 15 channel.
      *
-     * @return the AUX16 value.
+     * @return the CHANNEL 15 value.
      */
-    public int getAux16() {
-        return aux16;
+    public int getChannel15() {
+        return channel15;
     }
 
     /**
-     * Sets the value for AUX16 as an integer.
+     * Sets the value for CHANNEL 15 as an integer.
      *
-     * @param aux16 the AUX16 value to set.
+     * @param channel15 the CHANNEL 15 value to set.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux16(int aux16) {
-        this.aux16 = aux16;
+    public ChannelBuilder setChannel15(int channel15) {
+        this.channel15 = channel15;
         return this;
     }
 
     /**
-     * Sets the value for AUX16 as a double and parses it to the correct format.
+     * Sets the value for CHANNEL 15 as a double and parses it to the correct format.
      *
-     * @param aux16 the AUX16 value to set as a double.
+     * @param channel15 the CHANNEL 15 value to set as a double (values from -1 to 1).
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux16(double aux16) {
-        this.aux16 = FormatHelper.parseAxisValue(aux16);
+    public ChannelBuilder setChannel15(double channel15) {
+        this.channel15 = FormatHelper.parseAxisValue(channel15);
         return this;
     }
 
     /**
-     * Sets the value for AUX16 based on a boolean (activated or not).
+     * Sets the value for CHANNEL 15 based on a boolean (activated or not).
      *
      * @param activated the boolean value indicating activation state.
      * @return the current {@code ChannelBuilder} instance for chaining.
      */
-    public ChannelBuilder setAux16(boolean activated) {
-        this.aux16 = FormatHelper.parseActivatedValue(activated);
+    public ChannelBuilder setChannel15(boolean activated) {
+        this.channel15 = FormatHelper.parseActivatedValue(activated);
+        return this;
+    }
+
+    // CHANNEL 16
+
+    /**
+     * Retrieves the value for CHANNEL 16 channel.
+     *
+     * @return the CHANNEL 16 value.
+     */
+    public int getChannel16() {
+        return channel16;
+    }
+
+    /**
+     * Sets the value for CHANNEL 16 as an integer.
+     *
+     * @param channel16 the CHANNEL 16 value to set.
+     * @return the current {@code ChannelBuilder} instance for chaining.
+     */
+    public ChannelBuilder setChannel16(int channel16) {
+        this.channel16 = channel16;
+        return this;
+    }
+
+    /**
+     * Sets the value for CHANNEL 16 as a double and parses it to the correct format.
+     *
+     * @param channel16 the CHANNEL 16 value to set as a double (values from -1 to 1).
+     * @return the current {@code ChannelBuilder} instance for chaining.
+     */
+    public ChannelBuilder setChannel16(double channel16) {
+        this.channel16 = FormatHelper.parseAxisValue(channel16);
+        return this;
+    }
+
+    /**
+     * Sets the value for CHANNEL 16 based on a boolean (activated or not).
+     *
+     * @param activated the boolean value indicating activation state.
+     * @return the current {@code ChannelBuilder} instance for chaining.
+     */
+    public ChannelBuilder setChannel16(boolean activated) {
+        this.channel16 = FormatHelper.parseActivatedValue(activated);
         return this;
     }
 
