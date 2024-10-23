@@ -48,7 +48,7 @@ public class CRSFExample {
         FrameProcessor frameProcessor = new FrameProcessor();
         
         // Simulate incoming data
-        byte[] rawData = new byte[]{0x10, 0x12, 0x02, 0x00, 0x01, 0x02, 0x03};
+        byte[] rawData = FormatHelper.hexToByteArraySpaced("C8 11 02 00 00 00 00 00 00 00 00 00 00 00 00 03 E7 00 6E");
 
         // Process the data and define how frames will be handled
         frameProcessor.processData(rawData, frame -> {
