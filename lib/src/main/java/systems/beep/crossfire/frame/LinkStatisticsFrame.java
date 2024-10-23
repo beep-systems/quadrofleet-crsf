@@ -72,42 +72,92 @@ public class LinkStatisticsFrame extends CRSFFrame {
 
     // Methods for extracting individual statistics follow:
 
+    /**
+     * Gets the RSSI for the first uplink antenna.
+     *
+     * @return the RSSI in dBm for the first uplink antenna.
+     */
     public int getUplinkRSSI1() {
         return rawData[3] * -1;  // Convert to dBm
     }
 
+    /**
+     * Gets the RSSI for the second uplink antenna.
+     *
+     * @return the RSSI in dBm for the second uplink antenna.
+     */
     public int getUplinkRSSI2() {
         return rawData[4] * -1;  // Convert to dBm
     }
 
+    /**
+     * Gets the uplink link quality.
+     *
+     * @return the uplink link quality as a percentage.
+     */
     public int getUplinkLinkQuality() {
         return rawData[5];
     }
 
+    /**
+     * Gets the Signal-to-Noise Ratio (SNR) for the uplink.
+     *
+     * @return the uplink SNR in dB.
+     */
     public int getUplinkSNR() {
         return rawData[6];
     }
 
+    /**
+     * Gets the active antenna identifier.
+     *
+     * @return 0 for Antenna 1, 1 for Antenna 2.
+     */
     public int getActiveAntenna() {
         return rawData[7];
     }
 
+    /**
+     * Gets the radio frequency mode.
+     *
+     * @return the RF mode identifier.
+     */
     public int getRadioFrequencyMode() {
         return rawData[8];
     }
 
+    /**
+     * Gets the transmitted power for the uplink.
+     *
+     * @return the transmitting power in milli watts (mW).
+     */
     public int getUplinkPower() {
         return rawData[9];
     }
 
+    /**
+     * Gets the RSSI for the downlink.
+     *
+     * @return the RSSI in dBm for the downlink.
+     */
     public int getDownlinkRSSI() {
         return rawData[10] * -1;  // Convert to dBm
     }
 
+    /**
+     * Gets the downlink link quality.
+     *
+     * @return the downlink link quality as a percentage.
+     */
     public int getDownlinkLinkQuality() {
         return rawData[11];
     }
 
+    /**
+     * Gets the Signal-to-Noise Ratio (SNR) for the downlink.
+     *
+     * @return the downlink SNR in dB.
+     */
     public int getDownlinkSNR() {
         return rawData[12];
     }
@@ -118,69 +168,145 @@ public class LinkStatisticsFrame extends CRSFFrame {
     public static class LinkStatisticsBuilder {
 
         private Address address;
+
         private int uplinkRSSI1;
+
         private int uplinkRSSI2;
+
         private int uplinkLinkQuality;
+
         private int uplinkSNR;
+
         private int uplinkPower;
+
         private int activeAntenna;
+
         private int radioFrequencyMode;
+
         private int downlinkRSSI;
+
         private int downlinkSNR;
+
         private int downlinkLinkQuality;
 
         // Methods for setting builder fields and constructing the frame
 
+        /**
+         * Sets the address for the LinkStatistics frame.
+         *
+         * @param address the address to set.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setAddress(final Address address) {
             this.address = address;
             return this;
         }
 
+        /**
+         * Sets the uplink RSSI for antenna 1.
+         *
+         * @param uplinkRSSI1 the uplink RSSI in dBm for antenna 1.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setUplinkRSSI1(int uplinkRSSI1) {
             this.uplinkRSSI1 = uplinkRSSI1;
             return this;
         }
 
+        /**
+         * Sets the uplink RSSI for antenna 2.
+         *
+         * @param uplinkRSSI2 the uplink RSSI in dBm for antenna 2.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setUplinkRSSI2(int uplinkRSSI2) {
             this.uplinkRSSI2 = uplinkRSSI2;
             return this;
         }
 
+        /**
+         * Sets the uplink link quality.
+         *
+         * @param uplinkLinkQuality the uplink link quality as a percentage.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setUplinkLinkQuality(int uplinkLinkQuality) {
             this.uplinkLinkQuality = uplinkLinkQuality;
             return this;
         }
 
+        /**
+         * Sets the Signal-to-Noise Ratio (SNR) for the uplink.
+         *
+         * @param uplinkSNR the uplink SNR in dB.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setUplinkSNR(int uplinkSNR) {
             this.uplinkSNR = uplinkSNR;
             return this;
         }
 
+        /**
+         * Sets the transmit power for the uplink.
+         *
+         * @param uplinkPower the transmit power in milliwatts (mW).
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setUplinkPower(int uplinkPower) {
             this.uplinkPower = uplinkPower;
             return this;
         }
 
+        /**
+         * Sets the active antenna identifier.
+         *
+         * @param activeAntenna 0 for Antenna 1, 1 for Antenna 2.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setActiveAntenna(int activeAntenna) {
             this.activeAntenna = activeAntenna;
             return this;
         }
 
+        /**
+         * Sets the radio frequency mode.
+         *
+         * @param radioFrequencyMode the RF mode identifier.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setRadioFrequencyMode(int radioFrequencyMode) {
             this.radioFrequencyMode = radioFrequencyMode;
             return this;
         }
 
+        /**
+         * Sets the downlink RSSI.
+         *
+         * @param downlinkRSSI the RSSI in dBm for the downlink.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setDownlinkRSSI(int downlinkRSSI) {
             this.downlinkRSSI = downlinkRSSI;
             return this;
         }
 
+        /**
+         * Sets the Signal-to-Noise Ratio (SNR) for the downlink.
+         *
+         * @param downlinkSNR the downlink SNR in dB.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setDownlinkSNR(int downlinkSNR) {
             this.downlinkSNR = downlinkSNR;
             return this;
         }
 
+        /**
+         * Sets the downlink link quality.
+         *
+         * @param downlinkLinkQuality the downlink link quality as a percentage.
+         * @return the builder instance.
+         */
         public LinkStatisticsBuilder setDownlinkLinkQuality(int downlinkLinkQuality) {
             this.downlinkLinkQuality = downlinkLinkQuality;
             return this;

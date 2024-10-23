@@ -13,7 +13,10 @@ import java.util.Arrays;
  */
 public abstract class CRSFExtendedFrame extends CRSFFrame {
 
-    public static final int MIN_SIZE = 6; // Minimum size of the CRSF extended frame
+    /**
+     * Minimum size of the CRSF extended frame
+     */
+    public static final int MIN_SIZE = 6;
 
     /**
      * Constructs a CRSFExtendedFrame with the given raw data.

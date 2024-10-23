@@ -18,7 +18,6 @@ import java.util.Arrays;
  *   <li>Value</li>
  * </ul>
  * All strings are ASCII and are sent as null-terminated strings (e.g., "Hi" is sent as {@code 48 69 00}).
- * </p>
  */
 public class ParameterSettingsEntryFrame extends CRSFExtendedFrame {
 

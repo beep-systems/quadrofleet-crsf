@@ -15,7 +15,6 @@ import systems.beep.helper.CRCHelper;
  * </ul>
  * The field indexes are not fixed, meaning you cannot assume a specific field index for specific commands
  * (e.g., setting field 11 does not necessarily correspond to the BIND command).
- * </p>
  */
 public class ParameterWriteFrame extends CRSFExtendedFrame {
 

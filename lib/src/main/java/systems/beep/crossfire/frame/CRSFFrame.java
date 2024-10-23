@@ -15,13 +15,25 @@ import java.util.Arrays;
  */
 public abstract class CRSFFrame {
 
-    public static final byte FRAME_MAX_SIZE = 64; // Maximum size of the CRSF frame
+    /**
+     * Maximum size of the CRSF frame
+     */
+    public static final byte FRAME_MAX_SIZE = 64;
 
-    protected static final byte FRAME_SYNC_BYTE = (byte) 0xC8; // Synchronization byte for CRSF frames
+    /**
+     * Synchronization byte for CRSF frames
+     */
+    protected static final byte FRAME_SYNC_BYTE = (byte) 0xC8;
 
-    protected static final double DEGREES = 180.0 / Math.PI; // Conversion factor for radians to degrees
+    /**
+     * Conversion factor for radians to degrees
+     */
+    protected static final double DEGREES = 180.0 / Math.PI;
 
-    protected final byte[] rawData; // Raw data of the frame
+    /**
+     * Raw data of the frame
+     */
+    protected final byte[] rawData;
 
     /**
      * Constructs a CRSFFrame with the provided raw data.
