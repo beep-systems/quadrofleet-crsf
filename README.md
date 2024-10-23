@@ -20,14 +20,14 @@ To include the CRSF Protocol Java Library in your project, you can add the follo
 <dependency>
     <groupId>beep.systems</groupId>
     <artifactId>jcrsf</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
 For Gradle users, add this to your `build.gradle`:
 
 ```groovy
-implementation 'beep.systems:jcrsf:0.0.1'
+implementation 'beep.systems:jcrsf:0.0.2'
 ```
 
 Alternatively,
