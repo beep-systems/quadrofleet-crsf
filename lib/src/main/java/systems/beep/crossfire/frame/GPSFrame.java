@@ -46,7 +46,7 @@ public class GPSFrame extends CRSFFrame {
         return String.format("GPSFrame |" +
                         " Latitude: %.6f, Longitude: %.6f," +
                         " Ground speed (m/s): %.2f, Heading (grad): %.2f," +
-                        " Altitude (m): %.2f, Satellites: %d",
+                        " Altitude (m): %d, Satellites: %d",
                 getLatitude(), getLongitude(), getGroundSpeed(),
                 getHeading(), getAltitude(), getSatellites());
     }
